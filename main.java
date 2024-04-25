@@ -27,14 +27,15 @@ class Main {
   }
 
   static boolean proveRes(String res) {
-    if ((res.toLowerCase()).equals("y")) {
-      return true;
-    } else if ((res.toLowerCase()).equals("n")) {
-      house = m2("y", house);
-      return false;
-    } else {
-      System.err.println("Invalid response");
-      return false;
+    switch (res.toLowerCase()) {
+      case "y":
+        return true;
+      case "n":
+        house = m2("y", house);
+        return false;
+      default:
+        System.err.println("Invalid response");
+        return false;
     }
   }
 
